@@ -32,7 +32,7 @@ this software on an OpenVZ based system you will &mdash; most likely &mdash; not
 | | 10 | :white_check_mark: | All required packages are part of the base repos. |
 
 ## Dependencies
-* PHP `7.3+` (`7.4` recommended) with the following extensions: `cli`, `openssl`, `gd`, `mysql`, `PDO`, `mbstring`, `tokenizer`, `bcmath`, `xml` or `dom`, `curl`, `zip`, and `fpm` if you are planning to use nginx
+* PHP `7.4` or `8.0` with the following extensions: `cli`, `openssl`, `gd`, `mysql`, `PDO`, `mbstring`, `tokenizer`, `bcmath`, `xml` or `dom`, `curl`, `zip`, and `fpm` if you are planning to use nginx
 * MySQL `5.7.22` or higher (MySQL `8` recommended) **or** MariaDB `10.2` or higher.
 * Redis (`redis-server`)
 * A webserver (Apache, NGINX, Caddy, etc.)
@@ -40,7 +40,7 @@ this software on an OpenVZ based system you will &mdash; most likely &mdash; not
 * `tar`
 * `unzip`
 * `git`
-* `composer`
+* `composer` v2
 
 ### Example Dependency Installation
 The commands below are simply an example of how you might install these dependencies. Please consult with your
@@ -154,7 +154,7 @@ use them correctly.
 
 ``` bash
 # If using NGINX or Apache (not on CentOS):
-chown -R www-data:www-data * 
+chown -R www-data:www-data *
 
 # If using NGINX on CentOS:
 chown -R nginx:nginx *
@@ -215,7 +215,7 @@ If you are not using `redis` for anything you should remove the `After=` line, o
 when the service starts.
 :::
 
-If you are are using redis for your system, you will want to make sure to enable that it will start on boot. You can do that by running the following command: 
+If you are are using redis for your system, you will want to make sure to enable that it will start on boot. You can do that by running the following command:
 ```bash
 sudo systemctl enable --now redis-server
 ```
